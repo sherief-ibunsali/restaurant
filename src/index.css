@@ -410,6 +410,21 @@ tbody tr:hover {
   }
 }
 
+@media only screen and (max-width:370px) {
+  .btn__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .btn__cart--one{
+      font-size: 15px;
+      /* width: 100px; */
+  }
+  .btn__cart--two{
+    font-size: 15px;
+    /* width: 100px; */
+}
+}
 
 @media  only screen and (max-width:360px) {
   .menu{
