@@ -57,7 +57,7 @@ html{
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   gap: 40px;
-  padding: 30px;
+  padding:12px 30px;
 }
 
 .menu{
@@ -158,11 +158,12 @@ html{
 
 .table__container{
   max-width: 700px;
-  padding: 20px;
+  padding:0px 20px;
 
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 table {
@@ -247,6 +248,40 @@ tbody tr {
 }
 tbody tr:hover {
   background: #014055;
+}
+
+.total{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  margin-top: -20px;
+}
+
+.total__head{
+  color: var(--primary-color);
+  font-weight: 900;
+  font-size: 16px;
+}
+
+.btn__pay{
+  background-color: var(--primary-color);
+  height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5.5px 1em;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 0;
+    font-size: 1em;
+    line-height: 1.5;
+    font-weight: 700;
+    font-family: inherit;
+    color: #fff;
+    margin: 15px 0;
+    width: 100px;
+  
 }
 
 
@@ -399,7 +434,27 @@ tbody tr:hover {
   .btn__quantity {
     height: 30px;
   }
+
+  .btn__container{
+    display: flex;
+    justify-content: space-around;
+  }
 }
+
+
+@media  only screen and (max-width:420px) {
+ th{
+  font-size: 15px;
+ }
+ td{
+  font-size: 13px;
+ }
+ .btn__cancle{
+  height: 31px;
+  width: 31px;
+ }
+}
+
 
 @media  only screen and (max-width:390px) {
   .menu{
@@ -408,6 +463,12 @@ tbody tr:hover {
   .logo__title {
     font-size: 18px;
   }
+  th{
+    font-size: 14px;
+   }
+   td{
+    font-size: 13px;
+   }
 }
 
 @media only screen and (max-width:370px) {
@@ -435,6 +496,13 @@ tbody tr:hover {
   
     height: 210px;
   }
+
+  th{
+    font-size: 13px;
+   }
+   td{
+    font-size: 13px;
+   }
 }
 
 
@@ -448,4 +516,10 @@ tbody tr:hover {
   
     height: 210px;
   }
+  th{
+    font-size: 12px;
+   }
+   td{
+    font-size: 12px;
+   }
 }

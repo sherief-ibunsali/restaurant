@@ -96,7 +96,7 @@ function MenuData({ menu, setAddCart, addCart, onCart }) {
     setQuantity((qty) => qty - 1);
   }
 
-  console.log(addCart);
+  // console.log(addCart);
 
   return (
     <div className="menu">
