@@ -439,6 +439,9 @@ tbody tr:hover {
     display: flex;
     justify-content: space-around;
   }
+  .logo{
+    width: 80px;
+  }
 }
 
 
@@ -452,6 +455,9 @@ tbody tr:hover {
  .btn__cancle{
   height: 31px;
   width: 31px;
+ }
+ .logo{
+  width: 65px;
  }
 }
 
