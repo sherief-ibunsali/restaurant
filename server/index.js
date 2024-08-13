@@ -33,7 +33,8 @@ app.post("/order", async (req, res) => {
       merchantTransactionId: merchantTransactionId,
       name: req.body.name,
       amount: req.body.amount * 100,
-      redirectUrl: `http://localhost:9000/status?id=${merchantTransactionId}`,
+      // redirectUrl: `http://localhost:9000/status?id=${merchantTransactionId}`,
+      redirectUrl: `https://www.google.com/`,
       redirectMode: "POST",
       mobileNumber: req.body.phone,
       paymentInstrument: {
