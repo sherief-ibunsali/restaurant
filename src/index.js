@@ -1,14 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-// import RouterReact from "./Route";
+import RouterReact from "./Route";
 // import { Success } from "./components/success";
 // import { Fail } from "./components/fail";
-import Bill from "./components/bill";
+// import Bill from "./components/bill";
 
 function RestaurantApp() {
-  // return <RouterReact/>;
-  return <Bill/>
+  return <RouterReact/>;
+  // return <Bill/>
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
