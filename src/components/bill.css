@@ -1,0 +1,94 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .receipt-container {
+    width: 400px;
+    background-color: white;
+    margin: 50px auto;
+    padding: 20px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  header {
+    text-align: center;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+  }
+  
+  header h1 {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  header p {
+    font-size: 14px;
+    color: #777;
+    margin: 3px 0;
+  }
+  
+  .bill-info h2 {
+    font-size: 20px;
+    margin: 0;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .bill-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .bill-table th, .bill-table td {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .bill-table th {
+    background-color: #f4f4f4;
+  }
+  
+  .bill-table td {
+    font-size: 14px;
+  }
+  
+  .bill-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  
+  footer p {
+    font-size: 14px;
+    color: #777;
+  }  
+
+  @media only screen and (max-width:460px){
+    .receipt-container{
+      width: 340px;
+    }
+  }
+
+
+  @media only screen and (max-width:395px){
+    .receipt-container{
+      width: 300px;
+    }
+  }
+
+  @media only screen and (max-width:355px){
+    .receipt-container{
+      width: 280px;
+    }
+  }
+
+  @media only screen and (max-width:336px){
+    .receipt-container{
+      width: 270px;
+    }
+  }

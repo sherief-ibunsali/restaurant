@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./index.css";
 import Header from "./components/header";
 import Main from "./components/main";
 import Menu from "./components/menu";
@@ -6,7 +7,7 @@ import Cart from "./components/cart";
 
 function App() {
   const [addCart, setAddCart] = useState([]);
-  const [showCart, setShowCart] = useState(false);
+  const [showCart, setShowCart] = useState(true);
 
   function handleShowCart() {
     if (addCart.length === 0) {
@@ -43,7 +44,8 @@ function App() {
         />
         <div className="btn__container">
           <button className="btn__cart--one" onClick={handleShowCart}>
-            {showCart ? "Hide Cart" : "Show Cart"}
+            {showCart ? "Hide Cart" : "Show Cart"}{" "}
+            {addCart.length > 0 ? "(" + addCart.length + ")" : ""}
           </button>
           <button className="btn__cart--two" onClick={handleClearCart}>
             Clear Cart

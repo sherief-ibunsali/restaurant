@@ -51,7 +51,7 @@ export default function Menu({ addCart, setAddCart, onCart }) {
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
-
+  
   useEffect(() => {
     async function fetchData() {
       try {
@@ -75,7 +75,14 @@ export default function Menu({ addCart, setAddCart, onCart }) {
         }
         const data = await response.json();
         console.log(data.response);
-        setItems(data.response);
+        for (let i = 0; i < data.response.length; i++) {
+          let eachStatus = data.response[i].status;
+          if (eachStatus === 0) {
+            return;
+          } else {
+            setItems(data.response);
+          }
+        }
       } catch (err) {
         setError(err.message);
       } finally {
@@ -84,6 +91,7 @@ export default function Menu({ addCart, setAddCart, onCart }) {
     }
     fetchData();
   }, []);
+
 
   if (isLoading) return <h1 className="loader">Loading....</h1>;
   if (error) return <Error error={error} />;

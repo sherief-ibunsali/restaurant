@@ -5,6 +5,7 @@ export default function Cart({ addCart, onDelete }) {
   let totalPill = addCartData.reduce((acc, food) => {
     return acc + food.price * food.quantity;
   }, 0);
+
   // let data = {
   //   name: "sherief",
   //   amount: totalPill,
@@ -37,6 +38,7 @@ export default function Cart({ addCart, onDelete }) {
   //     }
   //   }
   // };
+
   const handlePay = async function () {
     try {
       const response = await fetch(
@@ -63,6 +65,7 @@ export default function Cart({ addCart, onDelete }) {
 
       if (data.success === "SUCCESS") {
         window.location.href = data.response;
+        console.log(data);
       }
     } catch (err) {
       console.log(err.message);
@@ -86,7 +89,17 @@ export default function Cart({ addCart, onDelete }) {
             let itemTotal = food.price * food.quantity;
             return (
               <tr key={i}>
-                <td>{food.name}</td>
+                <td>
+                  {food.name.length <= 5 ? (
+                    food.name
+                  ) : (
+                    <>
+                      {food.name.slice(0, 5)}
+                      <br />
+                      {food.name.slice(5)}
+                    </>
+                  )}
+                </td>
                 <td>₹{food.price}</td>
                 <td>{food.quantity}</td>
                 <td>₹{itemTotal}</td>
