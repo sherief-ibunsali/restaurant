@@ -124,6 +124,13 @@ html{
   color: var(--primary-color);
 }
 
+.wrong--id{
+  font-size: 19px;
+  padding: 10px;
+  text-align: left;
+  color: red;
+}
+
 .quantity{
   display: flex;
   align-items: center;

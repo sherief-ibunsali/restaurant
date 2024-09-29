@@ -64,8 +64,11 @@ export default function Menu({
     fetchData();
   }, [id, navigate]);
 
-  // if (isLoading) <Loader />;
-  // if (error) return <Error error={error} />;
+  if (!items.length) {
+    // alert("Could not find menu for you please enter a proper ID");
+
+    return <p className="wrong--id">Could not find food menu please enter a proper ID.</p>;
+  }
   return (
     <div>
       {isLoading && <Loader />}
