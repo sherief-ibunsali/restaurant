@@ -1,4 +1,5 @@
-import "./bill.css";
+import "./StylesComponent/bill.css";
+
 export default function Bill() {
   return (
     <div className="receipt-container">
@@ -7,6 +8,7 @@ export default function Bill() {
         <p>123 Street Name, City</p>
         <p>Phone: (123) 456-7890</p>
         <p>Date: 04 Sep 2024</p>
+        <p>Bill No: 676</p>
       </header>
 
       <section className="bill-info">

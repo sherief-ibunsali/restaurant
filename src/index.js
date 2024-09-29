@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-import RouterReact from "./Route";
+import RouterReact from "./Nav/Route";
 // import { Success } from "./components/success";
 // import { Fail } from "./components/fail";
 // import Bill from "./components/bill";
 
 function RestaurantApp() {
-  return <RouterReact/>;
+  return <RouterReact />;
   // return <Bill/>
 }
 

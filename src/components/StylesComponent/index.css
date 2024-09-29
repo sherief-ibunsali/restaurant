@@ -82,7 +82,7 @@ html{
   color: var(--primary-color);
   padding:0 30px;
   text-align: center;
-  padding-top: 30px;
+  padding: 20px;
 }
 
 .menu__details{

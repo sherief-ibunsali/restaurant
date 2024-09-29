@@ -1,4 +1,4 @@
-import "../payment.css";
+import "../components/StylesComponent/payment.css";
 export function Success() {
   return (
     <div className="success">

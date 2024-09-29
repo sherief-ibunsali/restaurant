@@ -1,57 +1,24 @@
 import { useEffect, useState } from "react";
 import Error from "./error";
-// import Cart from "./cart";
+import Loader from "./loader";
+import { useLocation, useNavigate } from "react-router-dom";
 
-// const menuDetails = [
-//   {
-//     id: 1,
-//     name: "Dosa",
-//     amt: "50",
-//     image:
-//       "https://t4.ftcdn.net/jpg/01/05/90/77/360_F_105907729_4RzHYsHJ2UFt5koUI19fc6VzyFPEjeXe.jpg",
-//   },
-//   {
-//     id: 2,
-//     name: "Idly",
-//     amt: "30",
-//     image:
-//       "https://t4.ftcdn.net/jpg/01/05/90/77/360_F_105907729_4RzHYsHJ2UFt5koUI19fc6VzyFPEjeXe.jpg",
-//   },
-//   {
-//     id: 3,
-//     name: "Briyani",
-//     amt: "300",
-//     image:
-//       "https://t4.ftcdn.net/jpg/01/05/90/77/360_F_105907729_4RzHYsHJ2UFt5koUI19fc6VzyFPEjeXe.jpg",
-//   },
-//   {
-//     id: 4,
-//     name: "Rice",
-//     amt: "250",
-//     image:
-//       "https://t4.ftcdn.net/jpg/01/05/90/77/360_F_105907729_4RzHYsHJ2UFt5koUI19fc6VzyFPEjeXe.jpg",
-//   },
-//   {
-//     id: 5,
-//     name: "Noodles",
-//     amt: "200",
-//     image:
-//       "https://t4.ftcdn.net/jpg/01/05/90/77/360_F_105907729_4RzHYsHJ2UFt5koUI19fc6VzyFPEjeXe.jpg",
-//   },
-//   {
-//     id: 6,
-//     name: "Pizza",
-//     amt: "500",
-//     image:
-//       "https://t4.ftcdn.net/jpg/01/05/90/77/360_F_105907729_4RzHYsHJ2UFt5koUI19fc6VzyFPEjeXe.jpg",
-//   },
-// ];
-
-export default function Menu({ addCart, setAddCart, onCart }) {
+export default function Menu({
+  addCart,
+  setAddCart,
+  onCart,
+  onShowCart,
+  showCart,
+  onClear,
+}) {
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
-  
+
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { id } = location.state || {};
+
   useEffect(() => {
     async function fetchData() {
       try {
@@ -64,7 +31,7 @@ export default function Menu({ addCart, setAddCart, onCart }) {
             },
             body: JSON.stringify({
               restaurant: {
-                id: 1,
+                id: id,
               },
             }),
           }
@@ -89,26 +56,56 @@ export default function Menu({ addCart, setAddCart, onCart }) {
         setIsLoading(false);
       }
     }
+    if (!id) {
+      alert("Please enter the proper ID");
+      navigate(-1);
+      return;
+    }
     fetchData();
-  }, []);
+  }, [id, navigate]);
 
-
-  if (isLoading) return <h1 className="loader">Loading....</h1>;
-  if (error) return <Error error={error} />;
+  // if (isLoading) <Loader />;
+  // if (error) return <Error error={error} />;
   return (
     <div>
-      <h3 className="menu__title">Food Menu</h3>
-      <div className="menu__container">
-        {items.map((menu, i) => (
-          <MenuData
-            menu={menu}
-            key={i}
+      {isLoading && <Loader />}
+      {error && <Error error={error} />}
+      {!isLoading && !error && (
+        <>
+          <h3 className="menu__title">Food Menu</h3>
+          <div className="menu__container">
+            {items.map((menu, i) => (
+              <MenuData
+                menu={menu}
+                key={i}
+                addCart={addCart}
+                setAddCart={setAddCart}
+                onCart={onCart}
+              />
+            ))}
+          </div>
+          <Buttons
+            onShowCart={onShowCart}
+            onClear={onClear}
             addCart={addCart}
-            setAddCart={setAddCart}
-            onCart={onCart}
+            showCart={showCart}
           />
-        ))}
-      </div>
+        </>
+      )}
+    </div>
+  );
+}
+
+function Buttons({ onShowCart, onClear, addCart, showCart }) {
+  return (
+    <div className="btn__container">
+      <button className="btn__cart--one" onClick={onShowCart}>
+        {showCart ? "Hide Cart" : "Show Cart"}{" "}
+        {addCart.length > 0 ? "(" + addCart.length + ")" : ""}
+      </button>
+      <button className="btn__cart--two" onClick={onClear}>
+        Clear Cart
+      </button>
     </div>
   );
 }

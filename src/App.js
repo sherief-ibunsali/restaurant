@@ -1,5 +1,7 @@
 import { useState } from "react";
-import "./index.css";
+
+import "./components/StylesComponent/index.css";
+
 import Header from "./components/header";
 import Main from "./components/main";
 import Menu from "./components/menu";
@@ -38,19 +40,13 @@ function App() {
       <Header />
       <Main>
         <Menu
-          addCart={addCart}
           setAddCart={setAddCart}
           onCart={handleAddCart}
+          addCart={addCart}
+          onShowCart={handleShowCart}
+          showCart={showCart}
+          onClear={handleClearCart}
         />
-        <div className="btn__container">
-          <button className="btn__cart--one" onClick={handleShowCart}>
-            {showCart ? "Hide Cart" : "Show Cart"}{" "}
-            {addCart.length > 0 ? "(" + addCart.length + ")" : ""}
-          </button>
-          <button className="btn__cart--two" onClick={handleClearCart}>
-            Clear Cart
-          </button>
-        </div>
         {addCart.length !== 0 && showCart && (
           <Cart addCart={addCart} onDelete={handleDeleteCart} />
         )}
