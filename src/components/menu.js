@@ -64,10 +64,14 @@ export default function Menu({
     fetchData();
   }, [id, navigate]);
 
-  if (!items.length) {
+  if (items.length === 0 && id !== 1) {
     // alert("Could not find menu for you please enter a proper ID");
 
-    return <p className="wrong--id">Could not find food menu please enter a proper ID.</p>;
+    return (
+      <p className="wrong--id">
+        Could not find food menu please enter a proper ID.
+      </p>
+    );
   }
   return (
     <div>

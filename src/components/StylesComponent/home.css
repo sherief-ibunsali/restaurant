@@ -1,4 +1,4 @@
-.entry--page {
+/* .entry--page {
     display: flex;
     flex-direction: column; 
     align-items: center;
@@ -61,4 +61,218 @@
     }
   }
 
+   */
+
+
+   /* General styling for the entire page */
+/* General styling for the entire page */
+.entry--page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.restaurant-title {
+  font-size: 3rem;
+  color: #0A1551;
+  margin-bottom: 1rem;
   
+}
+
+.restaurant-description {
+  font-size: 1.2rem;
+  color: #555;
+  text-align: left;
+  max-width: 700px;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+
+}
+
+.reservation-section {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.reservation-section h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+
+.id {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease; 
+}
+
+.id:focus {
+  border-color: #0056b3;
+  outline: none; 
+}
+
+.id::placeholder {
+color:gray; 
+font-size: 14px; 
+}
+
+.reservation-btn {
+  background-color: #0A1551;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.reservation-btn:hover {
+  background-color: #0056b3;
+}
+
+.special-dishes {
+  /* margin-top: 3rem; */
+  text-align: center;
+}
+.reserve--req{
+  color: #0A1551;
+}
+
+.special-dishes h2 {
+  font-size: 2.5rem;
+  color: #0A1551;
+  margin-bottom: 1.5rem;
+}
+
+.dish-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.dish {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 200px;
+}
+
+.dish img {
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.dish-name {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* NavLink styling */
+.nav {
+  text-decoration: none;
+  color: white;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .entry--page {
+    padding: 1rem;
+  }
+
+  .restaurant-title {
+    font-size: 2rem;
+  }
+
+  .restaurant-description {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .reservation-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .id-input {
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  .reservation-btn {
+    width: 100%;
+    padding: 0.75rem;
+  }
+
+  .special-dishes h2 {
+    font-size: 2rem;
+  }
+
+  .dish-gallery {
+    gap: 1rem;
+  }
+
+  .dish {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .restaurant-title {
+    font-size: 1.8rem;
+  }
+
+  .restaurant-description {
+    font-size: 0.9rem;
+  }
+
+  .special-dishes h2 {
+    font-size: 1.8rem;
+  }
+
+  .dish {
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  .dish img {
+    width: 100%;
+  }
+
+  .dish-name {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 380px) {
+.restaurant-title{
+  font-size: 25px;
+}
+}
+
+
+@media (max-width: 333px) {
+  .restaurant-title{
+    font-size: 22px;
+  }
+  }
+
+  @media (max-width: 295px) {
+    .restaurant-title{
+      font-size: 20px;
+    }
+    }
