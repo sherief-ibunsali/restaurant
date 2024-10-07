@@ -34,7 +34,7 @@ export default function Header() {
         />
       </div>
       <div className="logo__details">
-        <h2 className="logo__title">Advance Software Billing</h2>
+        <h2 className="logo__title app">Advance Software Billing</h2>
         <h3 className="logo__title" style={{textAlign:"right",marginTop:"5px"}}>{restaurantName}</h3>
         {/* <p>Welcome to New Restaurant</p> */}
       </div>

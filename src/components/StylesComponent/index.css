@@ -33,11 +33,16 @@ html{
   padding: 12px;
 }
 
+.app{
+  text-align: end !important;
+
+}
 
 .logo__title{
+  /* margin-left: auto; */
   color: #fff;
   font-size: 28px;
-      font-weight: 700;
+ font-weight: 700;
 
 }
 
@@ -426,6 +431,7 @@ tbody tr:hover {
   }
   .logo__title {
     font-size: 25px;
+    text-align: end !important;
   }
 }
 
@@ -476,6 +482,12 @@ tbody tr:hover {
   }
 }
 
+@media  only screen and (max-width:440px) {
+  .logo__title{
+    font-size: 18px !important;
+  }
+}
+
 
 @media  only screen and (max-width:420px) {
  th{
@@ -494,12 +506,14 @@ tbody tr:hover {
 }
 
 
+
+
 @media  only screen and (max-width:390px) {
   .menu{
     width: 340px;
   }
   .logo__title {
-    font-size: 18px;
+    font-size: 18px !important;
   }
   th{
     font-size: 14px;
@@ -522,6 +536,9 @@ tbody tr:hover {
   .btn__cart--two{
     font-size: 15px;
     /* width: 100px; */
+}
+.logo__title{
+  font-size: 17px !important;
 }
 }
 
@@ -559,5 +576,8 @@ tbody tr:hover {
    }
    td{
     font-size: 12px;
+   }
+   .logo__title{
+    font-size: 15px !important;
    }
 }

@@ -1,71 +1,4 @@
-/* .entry--page {
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
-    padding: 20px;
-    width: 100%;
-  }
-  
-  .id {
-    width: 90%;
-    padding: 10px;
-    margin-bottom: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    transition: border-color 0.3s ease; 
-  }
-  
-  .id:focus {
-    border-color: #0056b3;
-    outline: none; 
-  }
 
-  .id::placeholder {
-  color:gray; 
-  font-size: 14px; 
-}
-
-  
-  .btn--nav {
-    width: 90%; 
-    padding: 10px;
-    font-size: 16px;
-    background-color: #0A1551;;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all .2s;
-    font-weight: bold;
-  }
-  
-  .btn--nav:hover {
-    background-color: #0056b3;
-  }
-
-  .nav{
-    text-decoration: none;
-    color: #fff;
-  }
-  
- 
-  @media only screen and (max-width: 600px) {
-    .entry--page {
-      padding: 10px;
-    }
-  
-    .id, .btn--nav {
-      width: 100%; 
-    }
-  }
-
-   */
-
-
-   /* General styling for the entire page */
-/* General styling for the entire page */
 .entry--page {
   display: flex;
   flex-direction: column;
@@ -159,9 +92,12 @@ font-size: 14px;
   justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
+  max-width: 1200px; /* Restrict the max width for better layout */
+  margin: 0 auto; /* Center the gallery */
 }
 
-.dish {
+
+/* .dish {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -176,7 +112,29 @@ font-size: 14px;
 .dish img {
   border-radius: 8px;
   margin-bottom: 0.5rem;
+} */
+
+.dish {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: calc(33.33% - 2rem); /* Adjust to allow three items per row with spacing */
+  max-width: 300px; /* Set a max width to control scaling on larger screens */
+  box-sizing: border-box;
 }
+
+.dish img {
+  width: 100%; /* Make the image scale with the container */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
 
 .dish-name {
   font-size: 1.2rem;
